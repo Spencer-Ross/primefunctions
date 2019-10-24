@@ -42,7 +42,7 @@ function maxPrimeSum(limit) {
   let n = 0;
   const primes = primeGen(limit + 1);
   const sumPrimes = cumulativeSum(primes);
-  // const notPrime = new Uint8Array(limit);
+  // sumPrimes.unshift(0);
 
   for (let i = 0; i < primes.length; i++) {
     for (let j = (n + 1) - i; j >= 0; j--) {
@@ -58,21 +58,6 @@ function maxPrimeSum(limit) {
   console.log(`max sum = ${result}`);
 
   // return result;
-
-  /* let maxSum = 0;
-  let maxRun = -1;
-  for (let i = 0; i < primes.length; i++) {
-
-    let sum = 0;
-    for (let j = i; j < primes.length; j++) {
-      sum += primes[j];
-      if (sum > limit) break;
-      if (!notPrime[sum] && sum > maxSum && j - i > maxRun) {
-        maxRun = j - i;
-        maxSum = sum;
-      }
-    }
-  } */
 }
 
-maxPrimeSum(100);
+maxPrimeSum(1000);
