@@ -1,4 +1,4 @@
-var expect = require('chai').expect;
+// var expect = require('chai').expect;
 
 describe('PrimeFunctions', function () {
   const testNum1 = 10;
@@ -10,12 +10,12 @@ describe('PrimeFunctions', function () {
 
   describe('primeGen()', function () {
     it('should return [2, 3, 5, 7] for testNums1', function () {
-      chai.expect(primeGen(testNums1)).to.equal([2, 3, 5, 7]);
+      chai.expect(primeGen(testNum1)).to.eql([ 2, 3, 5, 7 ]);
     });
   });
   describe('primeGen()', function () {
     it('should return [2, 3, 5, 7, 11, 13, 17, 19] for testNums2', function () {
-      chai.expect(primeGen(testNums2)).to.equal([2, 3, 5, 7, 11, 13, 17, 19]);
+      chai.expect(primeGen(testNum2)).to.eql([2, 3, 5, 7, 11, 13, 17, 19]);
     });
   });
   describe('cumulativeSum()', function () {
