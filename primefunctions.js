@@ -38,26 +38,27 @@ console.log(cumulativeSum(primeGen(10))); // test
 
 
 function maxPrimeSum(limit) {
-  let result = 0;
-  let n = 0;
-  const primes = primeGen(limit + 1);
-  const sumPrimes = cumulativeSum(primes);
-  // sumPrimes.unshift(0);
+  let maxSum = 0;
+  let maxRun = 0;
+  let sum;
+  const primes = primeGen(limit);
+  // const sumPrimes = cumulativeSum(primes);
 
   for (let i = 0; i < primes.length; i++) {
-    for (let j = (n + 1) - i; j >= 0; j--) {
-      if (sumPrimes[i] - sumPrimes[j] > limit) break;
-      if (primes.includes(sumPrimes[i] - sumPrimes[j]) >= 0) {
-        n = i - j;
-        result = sumPrimes[i] - sumPrimes[j];
+    sum = 0;
+
+    for (let j = i; j < primes.length; j++) {
+      sum += primes[j];
+      if (sum > limit) break;
+      if (isPrime(sum) && sum > maxSum && j - i > maxRun) {
+        maxRun = j - i;
+        maxSum = sum;
       }
     }
   }
 
-  console.log(`max run = ${n}`);
-  console.log(`max sum = ${result}`);
-
-  // return result;
+  const result = [maxSum, maxRun + 1];
+  return result;
 }
 
-maxPrimeSum(1000);
+console.log(maxPrimeSum(100));

@@ -29,13 +29,18 @@ describe('PrimeFunctions', function () {
     });
   });
   describe('maxPrimeSum()', function () {
-    it('should return [41, 6] for testNum3', function () {
-      chai.expect(maxPrimeSum(testNum3)).to.equal([41, 6]);
+    it('should return [41, 6] for 100', function () {
+      chai.expect(maxPrimeSum(100)).to.eql([ 41, 6 ]);
     });
   });
+  /* describe('maxPrimeSum()', function () {
+    it('should return array for 100', function () {
+      chai.expect(maxPrimeSum(100)).be.a('array');
+    });
+  }); */
   describe('maxPrimeSum()', function () {
     it('should return [953, 21] for testNum4', function () {
-      chai.expect(maxPrimeSum(testNum4)).to.equal([953, 21]);
+      chai.expect(maxPrimeSum(testNum4)).to.eql([ 953, 21 ]);
     });
   });
 });
