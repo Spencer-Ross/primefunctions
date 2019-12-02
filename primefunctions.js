@@ -61,4 +61,4 @@ function maxPrimeSum(limit) {
   return result;
 }
 
-console.log(maxPrimeSum(10000));
+console.log(maxPrimeSum(100));

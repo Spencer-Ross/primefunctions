@@ -1,22 +1,43 @@
 function isPrime(num) {
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i < Math.sqrt(num); i++) {
     if (num % i === 0) {
       return false;
     }
   }
-  return num > 1;
+  return true;
 }
 
 // This function takes a threshold number,and returns a list of prime
 // numbers which are below that threshold.
-function primeGen(num) {
+/* function primeGen(num) {
   const array = [];
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i < Math.sqrt(num); i++) {
     if (isPrime(i)) array.push(i);
   }
 
   return array;
+} */
+
+function primeGen(num) {
+  const array = new Array(num).fill(true);
+
+  for (let i = 2; i < Math.sqrt(num); i++) {
+    if (array[i]) {
+      for (let j = i * i; j < num; j += i) {
+        array[j] = false;
+      }
+    }
+  }
+
+  return array.reduce((primes, primeCheck, i) => {
+    if (primeCheck && i > 1) {
+      primes.push(i);
+    }
+
+    return primes;
+  }, []);
 }
+
 
 console.log(primeGen(10)); // test
 
