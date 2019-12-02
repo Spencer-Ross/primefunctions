@@ -83,3 +83,4 @@ function maxPrimeSum(limit) {
 }
 
 console.log(maxPrimeSum(100));
+console.log(maxPrimeSum(100000));
