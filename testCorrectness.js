@@ -1,4 +1,5 @@
-// var expect = require('chai').expect;
+/* eslint-env mocha, chai */
+/*  global primeGen, cumulativeSum, maxPrimeSum, chai */
 
 describe('PrimeFunctions', function () {
   const testNum1 = 10;
@@ -30,7 +31,7 @@ describe('PrimeFunctions', function () {
   });
   describe('maxPrimeSum()', function () {
     it('should return [41, 6] for 100', function () {
-      chai.expect(maxPrimeSum(100)).to.eql([ 41, 6 ]);
+      chai.expect(maxPrimeSum(testNum3)).to.eql([ 41, 6 ]);
     });
   });
   /* describe('maxPrimeSum()', function () {
