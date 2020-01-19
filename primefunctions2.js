@@ -63,7 +63,6 @@ function maxPrimeSum(limit) {
   let maxRun = 0;
   let sum;
   const primes = primeGen(limit);
-  // const sumPrimes = cumulativeSum(primes);
 
   for (let i = 0; i < primes.length; i++) {
     sum = 0;
